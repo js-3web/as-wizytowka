@@ -9,6 +9,45 @@
 <meta property="og:title" content="Anna Sarafin — neurologopeda | Lublin">
 <meta property="og:description" content="17 lat blisko dzieci. Diagnoza, terapia, wsparcie rodziców. Lublin.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://js-3web.github.io/as-wizytowka/">
+<meta property="og:image" content="https://js-3web.github.io/as-wizytowka/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pl_PL">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "@id": "https://js-3web.github.io/as-wizytowka/",
+  "name": "Anna Sarafin — neurologopeda",
+  "description": "Neurologopeda z 17-letnim doświadczeniem. Diagnoza i terapia logopedyczna dzieci, terapia miofunkcjonalna. Lublin.",
+  "url": "https://js-3web.github.io/as-wizytowka/",
+  "telephone": "+48504817230",
+  "email": "annasiudaj@gmail.com",
+  "areaServed": {
+    "@type": "City",
+    "name": "Lublin"
+  },
+  "medicalSpecialty": "SpeechPathology",
+  "founder": {
+    "@type": "Person",
+    "name": "Anna Sarafin",
+    "jobTitle": "Neurologopeda",
+    "alumniOf": "Uniwersytet Marii Curie-Skłodowskiej w Lublinie"
+  },
+  "knowsAbout": [
+    "diagnoza logopedyczna",
+    "terapia zaburzeń mowy",
+    "opóźniony rozwój mowy",
+    "terapia miofunkcjonalna"
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -771,12 +810,29 @@
     transform: translateY(-2px);
     box-shadow: 0 8px 24px rgba(232, 197, 160, 0.3);
   }
+  .form-submit:disabled {
+    background: rgba(232, 197, 160, 0.4);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
   .form-privacy {
     margin-top: 20px;
     font-size: 13px;
     color: rgba(250, 246, 238, 0.5);
     line-height: 1.5;
   }
+  .form-error {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: rgba(232, 197, 160, 0.12);
+    border-left: 3px solid var(--apricot);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+  .form-error a { color: var(--apricot); text-decoration: underline; }
 
   /* ============ FOOTER ============ */
   footer {
@@ -1275,16 +1331,13 @@
         </ul>
       </div>
 
-      <form class="contact-form reveal"
-            action="https://formsubmit.co/annasiudaj@gmail.com"
-            method="POST">
-        <!-- FormSubmit configuration -->
-        <input type="hidden" name="_subject" value="Nowa wiadomość ze strony — Anna Sarafin">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="dziekuje.html">
-        <!-- Honeypot anti-spam -->
-        <input type="text" name="_honey" style="display:none">
+      <form class="contact-form reveal" id="contactForm">
+        <!-- Web3Forms configuration -->
+        <input type="hidden" name="access_key" value="f550b205-9880-4593-847c-11e936ea1996">
+        <input type="hidden" name="subject" value="Nowa wiadomość ze strony — Anna Sarafin">
+        <input type="hidden" name="from_name" value="Strona Anna Sarafin — kontakt">
+        <!-- Honeypot anti-spam (Web3Forms) -->
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
         <div class="form-group">
           <label for="name">Imię i nazwisko</label>
@@ -1306,13 +1359,18 @@
           <textarea id="message" name="wiadomosc" required placeholder="W kilku zdaniach: ile dziecko ma lat, co Was niepokoi, czego szukacie."></textarea>
         </div>
 
-        <button type="submit" class="form-submit">
-          Wyślij wiadomość
+        <button type="submit" class="form-submit" id="submitBtn">
+          <span class="form-submit-label">Wyślij wiadomość</span>
           <span class="btn-arrow">→</span>
         </button>
 
         <p class="form-privacy">
           Wysyłając formularz, wyrażasz zgodę na kontakt zwrotny w sprawie zapytania. Dane wykorzystam wyłącznie do udzielenia odpowiedzi.
+        </p>
+
+        <p class="form-error" id="formError" style="display:none;">
+          Coś poszło nie tak — spróbuj ponownie lub napisz bezpośrednio na
+          <a href="mailto:annasiudaj@gmail.com">annasiudaj@gmail.com</a>.
         </p>
       </form>
     </div>
@@ -1356,6 +1414,47 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
   reveals.forEach(r => io.observe(r));
+
+  // Contact form (Web3Forms via AJAX)
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitLabel = submitBtn.querySelector('.form-submit-label');
+  const errorBox = document.getElementById('formError');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    errorBox.style.display = 'none';
+    submitBtn.disabled = true;
+    const originalLabel = submitLabel.textContent;
+    submitLabel.textContent = 'Wysyłanie...';
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        window.location.href = 'dziekuje.html';
+      } else {
+        throw new Error(result.message || 'Błąd wysyłki');
+      }
+    } catch (err) {
+      console.error('Form error:', err);
+      submitBtn.disabled = false;
+      submitLabel.textContent = originalLabel;
+      errorBox.style.display = 'block';
+    }
+  });
 </script>
 
 </body>
