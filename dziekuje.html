@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dziękuję za wiadomość — Anna Sarafin, neurologopeda Lublin</title>
+<meta name="description" content="Twoja wiadomość dotarła. Odpowiem najszybciej jak to możliwe.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #FAF6EE;
+    --cream-deep: #F2EBDB;
+    --sage: #8FA68E;
+    --sage-deep: #6B7F6A;
+    --sage-light: #C8D4C2;
+    --sage-mist: #E4ECDF;
+    --apricot: #E8C5A0;
+    --apricot-deep: #D4A878;
+    --ink: #3B4540;
+    --ink-soft: #6B7568;
+    --line: #D8D1BF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(143, 166, 142, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(232, 197, 160, 0.07) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1, h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 350;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  a { color: var(--sage-deep); transition: color 0.2s; }
+  a:hover { color: var(--apricot-deep); }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Top brand strip */
+  .topbar {
+    padding: 32px 0;
+    border-bottom: 1px solid transparent;
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .topbar-mono { width: 42px; height: 42px; flex-shrink: 0; }
+  .topbar-name {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .topbar-role {
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  /* Main content */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+  }
+
+  .card {
+    text-align: center;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .checkmark-wrap {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+
+  .checkmark-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--sage-mist);
+    border: 1.5px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(143, 166, 142, 0.3); }
+    50% { box-shadow: 0 0 0 14px rgba(143, 166, 142, 0); }
+  }
+
+  .checkmark-svg {
+    width: 48px;
+    height: 48px;
+    color: var(--sage-deep);
+    animation: draw 1s ease 0.3s both;
+  }
+  @keyframes draw {
+    from { stroke-dashoffset: 40; opacity: 0; }
+    to { stroke-dashoffset: 0; opacity: 1; }
+  }
+  .checkmark-svg path {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 0;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sage-deep);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--sage);
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 54px);
+    margin-bottom: 24px;
+  }
+  h1 .accent {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+
+  .lead {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto 16px;
+    line-height: 1.65;
+  }
+  .lead strong { color: var(--ink); font-weight: 500; }
+
+  .note {
+    margin-top: 36px;
+    padding: 28px 32px;
+    background: var(--cream-deep);
+    border-radius: 22px;
+    border-left: 4px solid var(--apricot);
+    text-align: left;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .note-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .note p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .note a { font-weight: 500; }
+
+  .actions {
+    margin-top: 44px;
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: all 0.25s;
+    border: 1.5px solid transparent;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--sage-deep);
+    color: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 69, 64, 0.15);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-arrow { transition: transform 0.25s; }
+  .btn-primary:hover .btn-arrow { transform: translateX(-3px); }
+
+  footer {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 500px) {
+    .container { padding: 0 22px; }
+    .topbar-inner { padding: 0 22px; }
+    .topbar-role { display: none; }
+    h1 { font-size: 32px; }
+    .lead { font-size: 17px; }
+    .note { padding: 22px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <svg class="topbar-mono" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#8FA68E" stroke-width="1.2"/>
+      <text x="40" y="48" text-anchor="middle" font-family="Fraunces, serif" font-size="28" font-style="italic" fill="#3B4540" font-weight="400">AS</text>
+      <line x1="28" y1="58" x2="52" y2="58" stroke="#E8C5A0" stroke-width="1"/>
+    </svg>
+    <div>
+      <div class="topbar-name">Anna Sarafin</div>
+      <div class="topbar-role">neurologopeda · Lublin</div>
+    </div>
+  </div>
+</div>
+
+<main>
+  <div class="container">
+    <div class="card">
+
+      <div class="checkmark-wrap">
+        <div class="checkmark-circle">
+          <svg class="checkmark-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12l5 5L20 7"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="eyebrow">Wiadomość dotarła</div>
+
+      <h1>Dziękuję — <span class="accent">odezwę się</span> najszybciej, jak to możliwe.</h1>
+
+      <p class="lead">
+        Otrzymałam Twoją wiadomość. Odpowiadam zwykle <strong>w ciągu jednego dnia roboczego</strong>.
+        Jeśli zostawiłaś / zostawiłeś numer telefonu, mogę oddzwonić.
+      </p>
+
+      <div class="note">
+        <div class="note-title">Sprawa pilna?</div>
+        <p>
+          Zadzwoń bezpośrednio: <a href="tel:+48504817230">504 817 230</a>.
+          Jeśli nie odbiorę, zostaw wiadomość — oddzwonię.
+        </p>
+      </div>
+
+      <div class="actions">
+        <a href="index.html" class="btn btn-primary">
+          <span class="btn-arrow">←</span>
+          Wróć na stronę główną
+        </a>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Anna Sarafin · neurologopeda · Lublin
+  </div>
+</footer>
+
+</body>
+</html>

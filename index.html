@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anna Sarafin — neurologopeda | Lublin</title>
+<meta name="description" content="Anna Sarafin — neurologopeda z 17-letnim doświadczeniem. Diagnoza i terapia logopedyczna dzieci, terapia miofunkcjonalna. Lublin.">
+<meta name="keywords" content="neurologopeda Lublin, logopeda dziecięcy Lublin, terapia miofunkcjonalna Lublin, Anna Sarafin, opóźniony rozwój mowy, diagnoza logopedyczna">
+<meta property="og:title" content="Anna Sarafin — neurologopeda | Lublin">
+<meta property="og:description" content="17 lat blisko dzieci. Diagnoza, terapia, wsparcie rodziców. Lublin.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=DM+Sans:opsz,wght@9..40,300..600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --cream: #FAF6EE;
+    --cream-deep: #F2EBDB;
+    --sage: #8FA68E;
+    --sage-deep: #6B7F6A;
+    --sage-light: #C8D4C2;
+    --sage-mist: #E4ECDF;
+    --apricot: #E8C5A0;
+    --apricot-deep: #D4A878;
+    --ink: #3B4540;
+    --ink-soft: #6B7568;
+    --line: #D8D1BF;
+    --shadow-sm: 0 1px 2px rgba(59, 69, 64, 0.04), 0 2px 8px rgba(59, 69, 64, 0.04);
+    --shadow-md: 0 4px 12px rgba(59, 69, 64, 0.06), 0 12px 32px rgba(59, 69, 64, 0.06);
+    --radius: 14px;
+    --radius-lg: 22px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 17px;
+    font-weight: 400;
+    overflow-x: hidden;
+  }
+
+  /* Subtle paper texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(143, 166, 142, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(232, 197, 160, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 400;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+
+  a { color: var(--sage-deep); text-decoration: none; transition: color 0.2s; }
+  a:hover { color: var(--apricot-deep); }
+
+  .container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============ NAV ============ */
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(250, 246, 238, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    color: var(--ink);
+  }
+  .brand-mono {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+  }
+  .brand-name { font-weight: 500; letter-spacing: 0.01em; }
+  .brand-role {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+  }
+  .nav-links a {
+    color: var(--ink);
+    font-size: 15px;
+    font-weight: 400;
+    position: relative;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 1px;
+    background: var(--apricot-deep);
+    transition: width 0.3s;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    background: var(--ink);
+    color: var(--cream) !important;
+    padding: 11px 22px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .nav-cta:hover { background: var(--sage-deep); color: var(--cream) !important; transform: translateY(-1px); }
+  .nav-cta::after { display: none; }
+
+  .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+  .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: 0.3s; }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 90px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sage-deep);
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 28px; height: 1px;
+    background: var(--sage);
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 5.5vw, 68px);
+    line-height: 1.08;
+    margin-bottom: 8px;
+    font-weight: 350;
+  }
+  .hero h1 .accent {
+    font-style: italic;
+    color: var(--sage-deep);
+    font-weight: 400;
+  }
+  .hero h1 .line-2 {
+    display: block;
+    font-style: italic;
+    font-weight: 350;
+    color: var(--ink);
+    position: relative;
+  }
+  .hero h1 .line-2 .underline-word {
+    position: relative;
+    display: inline-block;
+  }
+  .hero h1 .line-2 .underline-word::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: 0.08em;
+    height: 0.18em;
+    background: var(--apricot);
+    z-index: -1;
+    opacity: 0.6;
+  }
+
+  .hero-sub {
+    margin-top: 36px;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 520px;
+    line-height: 1.65;
+  }
+  .hero-sub strong { color: var(--ink); font-weight: 500; }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    margin-top: 42px;
+    flex-wrap: wrap;
+  }
+  .btn-primary, .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    transition: all 0.25s;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-primary:hover {
+    background: var(--sage-deep);
+    color: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 69, 64, 0.15);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .btn-secondary:hover {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .btn-arrow { transition: transform 0.25s; }
+  .btn-primary:hover .btn-arrow, .btn-secondary:hover .btn-arrow { transform: translateX(3px); }
+
+  /* HERO VISUAL — large monogram with organic shapes */
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 1 / 1.05;
+    max-width: 420px;
+    margin-left: auto;
+  }
+
+  /* ============ TRUST BAR ============ */
+  .trust-bar {
+    background: var(--sage-mist);
+    border-top: 1px solid var(--sage-light);
+    border-bottom: 1px solid var(--sage-light);
+    padding: 38px 0;
+    margin-top: -1px;
+  }
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    text-align: center;
+  }
+  .trust-item .num {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--sage-deep);
+    line-height: 1;
+    margin-bottom: 8px;
+    font-style: italic;
+  }
+  .trust-item .label {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+  .trust-divider {
+    width: 1px;
+    background: var(--sage-light);
+  }
+
+  /* ============ SECTIONS ============ */
+  section { padding: 110px 0; }
+
+  .section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--sage-deep);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .section-eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--sage);
+  }
+  .section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    max-width: 720px;
+    margin-bottom: 24px;
+    font-weight: 400;
+    line-height: 1.15;
+  }
+  .section-title em {
+    color: var(--sage-deep);
+    font-style: italic;
+  }
+  .section-intro {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 640px;
+    line-height: 1.7;
+  }
+
+  /* ============ SIGNALS ============ */
+  .signals { background: var(--cream); }
+  .signals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 40px;
+    margin-top: 56px;
+    max-width: 920px;
+  }
+  .signal {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+  .signal:nth-last-child(-n+2) { border-bottom: none; }
+  .signal-dot {
+    flex-shrink: 0;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--apricot);
+    margin-top: 11px;
+    box-shadow: 0 0 0 4px var(--cream-deep);
+  }
+  .signal-text {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .signals-cta {
+    margin-top: 56px;
+    padding: 32px 36px;
+    background: var(--sage-mist);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--sage);
+    font-size: 17px;
+    color: var(--ink);
+    max-width: 920px;
+    line-height: 1.6;
+  }
+  .signals-cta strong { color: var(--sage-deep); }
+
+  /* ============ OFFER ============ */
+  .offer { background: var(--cream-deep); }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 64px;
+  }
+  .offer-card {
+    background: var(--cream);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px 32px;
+    border: 1px solid var(--line);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .offer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--sage-light);
+  }
+  .offer-card:nth-child(4) { grid-column: 1 / 2; }
+  .offer-card:nth-child(5) {
+    grid-column: 2 / 4;
+    background: linear-gradient(135deg, var(--sage-mist) 0%, var(--cream) 100%);
+    border-color: var(--sage-light);
+  }
+
+  .offer-num {
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    color: var(--apricot-deep);
+    font-style: italic;
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  }
+  .offer-card h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+  .offer-card p {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .offer-icon {
+    width: 36px; height: 36px;
+    margin-bottom: 22px;
+    color: var(--sage-deep);
+  }
+
+  /* ============ ABOUT ============ */
+  .about { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .about-visual {
+    position: sticky;
+    top: 110px;
+    text-align: center;
+  }
+  .about-mono-wrap {
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 28px;
+  }
+  .about-name {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .about-role {
+    font-size: 13px;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+  .about-text p {
+    font-size: 17.5px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .about-text p:first-child::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    font-weight: 400;
+    float: left;
+    line-height: 0.85;
+    padding: 8px 14px 0 0;
+    color: var(--sage-deep);
+    font-style: italic;
+  }
+  .about-credentials {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .about-credentials h4 {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 18px;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .credentials-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+  }
+  .credentials-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    color: var(--ink);
+  }
+  .credentials-list li::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--apricot);
+    border-radius: 50%;
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  /* ============ PROCESS ============ */
+  .process { background: var(--sage-mist); }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    margin-top: 64px;
+    counter-reset: step;
+  }
+  .process-step {
+    position: relative;
+    padding-top: 24px;
+  }
+  .process-step::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-family: 'Fraunces', serif;
+    font-size: 52px;
+    font-style: italic;
+    color: var(--sage);
+    line-height: 1;
+    display: block;
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+  .process-step h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .process-step p {
+    color: var(--ink-soft);
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .process-line {
+    position: absolute;
+    top: 36px; right: -14px;
+    width: 28px; height: 1px;
+    background: var(--sage);
+    opacity: 0.5;
+  }
+  .process-step:last-child .process-line { display: none; }
+
+  /* ============ FOR-WHOM ============ */
+  .forwhom { background: var(--cream); }
+  .forwhom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-top: 64px;
+  }
+  .forwhom-card {
+    padding: 44px 40px;
+    border-radius: var(--radius-lg);
+    position: relative;
+  }
+  .forwhom-card.parents {
+    background: var(--sage-mist);
+    border: 1px solid var(--sage-light);
+  }
+  .forwhom-card.institutions {
+    background: var(--cream-deep);
+    border: 1px solid var(--line);
+  }
+  .forwhom-label {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+  .forwhom-card h3 {
+    font-size: 28px;
+    margin-bottom: 22px;
+    font-weight: 400;
+  }
+  .forwhom-card ul {
+    list-style: none;
+    display: grid;
+    gap: 14px;
+  }
+  .forwhom-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .forwhom-card li svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--apricot-deep);
+  }
+
+  /* ============ CONTACT ============ */
+  .contact {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 110px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(232, 197, 160, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .contact::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(143, 166, 142, 0.18) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .contact .section-eyebrow { color: var(--apricot); }
+  .contact .section-eyebrow::before { background: var(--apricot); }
+  .contact h2 { color: var(--cream); }
+  .contact .section-intro { color: rgba(250, 246, 238, 0.8); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    margin-top: 64px;
+    position: relative;
+    z-index: 1;
+  }
+  .contact-info h3 {
+    color: var(--cream);
+    font-size: 22px;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  .contact-list {
+    list-style: none;
+    display: grid;
+    gap: 24px;
+  }
+  .contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .contact-icon {
+    width: 42px; height: 42px;
+    background: rgba(232, 197, 160, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--apricot);
+  }
+  .contact-list .label {
+    font-size: 12px;
+    color: rgba(250, 246, 238, 0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .contact-list .value {
+    font-size: 17px;
+    color: var(--cream);
+  }
+  .contact-list a.value:hover { color: var(--apricot); }
+
+  /* FORM */
+  .contact-form {
+    background: rgba(250, 246, 238, 0.04);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(250, 246, 238, 0.1);
+    backdrop-filter: blur(8px);
+  }
+  .form-group {
+    margin-bottom: 22px;
+  }
+  .form-group label {
+    display: block;
+    font-size: 12px;
+    color: rgba(250, 246, 238, 0.7);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(250, 246, 238, 0.25);
+    color: var(--cream);
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px 0;
+    transition: border-color 0.25s;
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-bottom-color: var(--apricot);
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(250, 246, 238, 0.35);
+  }
+  .form-group textarea { min-height: 110px; }
+
+  .form-submit {
+    background: var(--apricot);
+    color: var(--ink);
+    border: none;
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.25s;
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .form-submit:hover {
+    background: var(--cream);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(232, 197, 160, 0.3);
+  }
+  .form-privacy {
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(250, 246, 238, 0.5);
+    line-height: 1.5;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--ink);
+    color: rgba(250, 246, 238, 0.6);
+    padding: 40px 0 50px;
+    border-top: 1px solid rgba(250, 246, 238, 0.08);
+  }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 13px;
+  }
+  .footer-inner a { color: rgba(250, 246, 238, 0.7); }
+  .footer-inner a:hover { color: var(--apricot); }
+
+  /* ============ ANIMATIONS ============ */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(2deg); }
+  }
+  .float-shape { animation: float-soft 8s ease-in-out infinite; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .nav-links.open {
+      display: flex;
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 32px 24px;
+    }
+    .nav-links.open li { padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .nav-links.open li:last-child { border-bottom: none; padding-top: 16px; }
+    .nav-toggle { display: block; }
+
+    .hero { padding: 60px 0 70px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-visual { max-width: 280px; margin: 0 auto; }
+
+    .trust-grid { grid-template-columns: 1fr; gap: 26px; }
+    .trust-divider { display: none; }
+
+    section { padding: 70px 0; }
+    .container { padding: 0 22px; }
+    .nav-inner { padding: 16px 22px; }
+
+    .signals-grid { grid-template-columns: 1fr; gap: 0; }
+    .signal { border-bottom: 1px solid var(--line); }
+    .signal:last-child { border-bottom: none; }
+
+    .offer-grid { grid-template-columns: 1fr; }
+    .offer-card:nth-child(4), .offer-card:nth-child(5) { grid-column: 1; }
+
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-visual { position: static; }
+    .about-mono-wrap { width: 180px; height: 180px; }
+
+    .process-grid { grid-template-columns: 1fr; gap: 32px; }
+    .process-line { display: none; }
+
+    .forwhom-grid { grid-template-columns: 1fr; }
+
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-form { padding: 28px 22px; }
+  }
+
+  @media (max-width: 500px) {
+    .hero h1 { font-size: 38px; }
+    .section-title { font-size: 28px; }
+    .brand-role { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg class="brand-mono" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="40" cy="40" r="38" fill="none" stroke="#8FA68E" stroke-width="1.2"/>
+        <text x="40" y="48" text-anchor="middle" font-family="Fraunces, serif" font-size="28" font-style="italic" fill="#3B4540" font-weight="400">AS</text>
+        <line x1="28" y1="58" x2="52" y2="58" stroke="#E8C5A0" stroke-width="1"/>
+      </svg>
+      <div>
+        <div class="brand-name">Anna Sarafin</div>
+        <div class="brand-role">neurologopeda · Lublin</div>
+      </div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#oferta">Oferta</a></li>
+      <li><a href="#o-mnie">O mnie</a></li>
+      <li><a href="#jak-pracuje">Jak pracuję</a></li>
+      <li><a href="#dla-kogo">Dla kogo</a></li>
+      <li><a href="#kontakt" class="nav-cta">Skontaktuj się</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content reveal">
+        <div class="hero-eyebrow">Neurologopeda · Lublin</div>
+        <h1>
+          Każde dziecko ma <span class="accent">coś</span> do powiedzenia.
+          <span class="line-2">Pomagam mu to <span class="underline-word">powiedzieć.</span></span>
+        </h1>
+        <p class="hero-sub">
+          <strong>Anna Sarafin</strong> — neurologopeda z <strong>17-letnim doświadczeniem</strong>
+          w przedszkolach i przychodniach. Diagnoza, terapia, wsparcie rodziców.
+          W Lublinie, blisko Was.
+        </p>
+        <div class="hero-ctas">
+          <a href="#kontakt" class="btn-primary">
+            Skontaktuj się
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#jak-pracuje" class="btn-secondary">
+            Zobacz, jak pracuję
+          </a>
+        </div>
+      </div>
+
+      <!-- HERO VISUAL: Big monogram with organic flowing shapes -->
+      <div class="hero-visual reveal">
+        <svg viewBox="0 0 400 420" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+          <!-- Organic background blobs -->
+          <g class="float-shape" style="transform-origin: center;">
+            <ellipse cx="200" cy="210" rx="180" ry="175" fill="#E4ECDF" opacity="0.6"/>
+          </g>
+          <ellipse cx="290" cy="120" rx="55" ry="60" fill="#E8C5A0" opacity="0.4"/>
+          <ellipse cx="100" cy="310" rx="60" ry="55" fill="#C8D4C2" opacity="0.7"/>
+
+          <!-- Decorative arc -->
+          <path d="M 50 210 Q 200 60 350 210" stroke="#8FA68E" stroke-width="1" fill="none" stroke-dasharray="2 6" opacity="0.5"/>
+          <path d="M 50 210 Q 200 360 350 210" stroke="#E8C5A0" stroke-width="1" fill="none" stroke-dasharray="2 6" opacity="0.5"/>
+
+          <!-- Central monogram circle -->
+          <circle cx="200" cy="210" r="115" fill="#FAF6EE" stroke="#8FA68E" stroke-width="1.5"/>
+          <circle cx="200" cy="210" r="105" fill="none" stroke="#8FA68E" stroke-width="0.5" opacity="0.5"/>
+
+          <!-- Letters AS -->
+          <text x="200" y="232" text-anchor="middle" font-family="Fraunces, serif"
+                font-size="100" font-style="italic" fill="#3B4540" font-weight="350">AS</text>
+
+          <!-- Bottom flourish -->
+          <line x1="140" y1="270" x2="260" y2="270" stroke="#E8C5A0" stroke-width="1.5"/>
+          <circle cx="200" cy="270" r="3" fill="#E8C5A0"/>
+
+          <!-- Small dots accent -->
+          <circle cx="80" cy="100" r="3" fill="#8FA68E" opacity="0.6"/>
+          <circle cx="335" cy="320" r="4" fill="#E8C5A0" opacity="0.7"/>
+          <circle cx="340" cy="80" r="2" fill="#8FA68E" opacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="num">17 lat</div>
+        <div class="label">DOŚWIADCZENIA Z DZIEĆMI</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">Przedszkola · przychodnie · gabinet</div>
+        <div class="label">SZEROKIE DOŚWIADCZENIE</div>
+      </div>
+      <div class="trust-item">
+        <div class="num">Logopedia + neurologopedia</div>
+        <div class="label">UMCS LUBLIN</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== SIGNALS ===================== -->
+<section class="signals" id="sygnaly">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Może to dobry moment</div>
+      <h2 class="section-title">Mowa dziecka rozwija się <em>w różnym tempie</em>. Czasem warto sprawdzić, czy intuicja Cię nie myli.</h2>
+    </div>
+
+    <div class="signals-grid reveal">
+      <div class="signal">
+        <div class="signal-dot"></div>
+        <div class="signal-text">Dziecko zaczyna mówić później niż rówieśnicy</div>
+      </div>
+      <div class="signal">
+        <div class="signal-dot"></div>
+        <div class="signal-text">Nie wymawia poprawnie pojedynczych głosek (np. R, L, SZ, S, K)</div>
+      </div>
+      <div class="signal">
+        <div class="signal-dot"></div>
+        <div class="signal-text">Ma otwartą buzię, ślini się, oddycha przez usta lub chrapie podczas snu</div>
+      </div>
+      <div class="signal">
+        <div class="signal-dot"></div>
+        <div class="signal-text">Jąka się, opuszcza sylaby albo szuka słów</div>
+      </div>
+      <div class="signal">
+        <div class="signal-dot"></div>
+        <div class="signal-text">Trudno mu się skupić, słuchać lub rozumieć polecenia</div>
+      </div>
+      <div class="signal">
+        <div class="signal-dot"></div>
+        <div class="signal-text">Zauważasz napięcia w obrębie twarzy, języka albo problem z połykaniem</div>
+      </div>
+    </div>
+
+    <div class="signals-cta reveal">
+      Konsultacja to rozmowa, obserwacja i jasna odpowiedź — co dalej.
+      <strong>Nie zobowiązuje do terapii.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== OFFER ===================== -->
+<section class="offer" id="oferta">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Oferta</div>
+      <h2 class="section-title">Z czym <em>mogę pomóc</em></h2>
+      <p class="section-intro">Pracuję z dziećmi w wieku przedszkolnym i wczesnoszkolnym. Każdą terapię poprzedza dokładna diagnoza — żebyśmy wiedzieli, nad czym i po co pracujemy.</p>
+    </div>
+
+    <div class="offer-grid">
+      <div class="offer-card reveal">
+        <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="11" cy="11" r="7"/>
+          <path d="M21 21l-4.35-4.35"/>
+        </svg>
+        <div class="offer-num">/ 01</div>
+        <h3>Diagnoza logopedyczna i neurologopedyczna</h3>
+        <p>Pełne badanie mowy, wymowy, rozumienia i pracy aparatu artykulacyjnego. Efekt: jasna odpowiedź, co dziecko potrafi, co warto poprawić i jaki plan zaproponuję.</p>
+      </div>
+
+      <div class="offer-card reveal">
+        <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9c-2 0-4-.65-5.6-1.85L3 21l1.85-3.4C3.65 16 3 14 3 12z"/>
+        </svg>
+        <div class="offer-num">/ 02</div>
+        <h3>Terapia zaburzeń mowy i wymowy</h3>
+        <p>Praca nad poszczególnymi głoskami i całościowym brzmieniem mowy. Indywidualne ćwiczenia i konsekwentne utrwalanie — w gabinecie i w domu.</p>
+      </div>
+
+      <div class="offer-card reveal">
+        <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2v8M12 22v-4M4.93 4.93l5.66 5.66M13.41 13.41l5.66 5.66M2 12h8M22 12h-4M4.93 19.07l5.66-5.66M13.41 10.59l5.66-5.66"/>
+        </svg>
+        <div class="offer-num">/ 03</div>
+        <h3>Opóźniony rozwój mowy</h3>
+        <p>Wsparcie dzieci, które zaczynają mówić później. Stymulacja słownictwa, zdań i komunikacji od strony, którą dziecko jest gotowe podjąć dziś.</p>
+      </div>
+
+      <div class="offer-card reveal">
+        <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2C9 2 6 5 6 9c0 3 2 5 2 8 0 2 1 5 4 5s4-3 4-5c0-3 2-5 2-8 0-4-3-7-6-7z"/>
+          <circle cx="12" cy="10" r="2"/>
+        </svg>
+        <div class="offer-num">/ 04</div>
+        <h3>Terapia miofunkcjonalna</h3>
+        <p>Praca nad prawidłową pozycją i pracą języka, połykaniem, oddychaniem i napięciem mięśniowym w obrębie twarzy. Często kluczowe uzupełnienie leczenia ortodontycznego i pomoc w trwałej zmianie wymowy.</p>
+      </div>
+
+      <div class="offer-card reveal">
+        <svg class="offer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <div class="offer-num">/ 05</div>
+        <h3>Wsparcie i instruktaż dla rodziców</h3>
+        <p>Konkretne wskazówki, jak pracować z dzieckiem między spotkaniami. Bez ćwiczeń z poradnika — szyte na miarę Waszego dziecka i Waszego dnia. Bo to Wy jesteście z nim na co dzień.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="o-mnie">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-mono-wrap">
+          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+            <circle cx="130" cy="130" r="120" fill="#FAF6EE" stroke="#8FA68E" stroke-width="1.5"/>
+            <circle cx="130" cy="130" r="110" fill="none" stroke="#8FA68E" stroke-width="0.5" opacity="0.4"/>
+            <text x="130" y="156" text-anchor="middle" font-family="Fraunces, serif"
+                  font-size="92" font-style="italic" fill="#3B4540" font-weight="350">AS</text>
+            <line x1="80" y1="185" x2="180" y2="185" stroke="#E8C5A0" stroke-width="1.2"/>
+            <circle cx="130" cy="185" r="2.5" fill="#E8C5A0"/>
+          </svg>
+        </div>
+        <div class="about-name">Anna Sarafin</div>
+        <div class="about-role">NEUROLOGOPEDA</div>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="section-eyebrow">O mnie</div>
+        <h2 class="section-title" style="margin-bottom: 36px;">Najpierw <em>relacja</em>. Potem ćwiczenia.</h2>
+
+        <p>Nazywam się Anna Sarafin. Od 17 lat pracuję z dziećmi — w przedszkolach publicznych i niepublicznych, przez cztery lata także w przychodniach zdrowia. Aktualnie prowadzę zajęcia w <strong>Rodzinnym Niepublicznym Przedszkolu „Ziarenko" w Lublinie</strong>. Skończyłam logopedię na UMCS, później studia podyplomowe z neurologopedii i certyfikowany kurs terapii miofunkcjonalnej. Doszkalam się stale — bo każde dziecko, które trafia do mnie, jest inne i potrzebuje innego podejścia.</p>
+
+        <p>Wierzę, że terapia nie zaczyna się od ćwiczeń, tylko od relacji. Najpierw dziecko musi mi zaufać — wtedy chce ze mną pracować. A rodzic musi rozumieć, co i po co robimy — wtedy ma siłę na kontynuację pracy w domu.</p>
+
+        <p>Nie obiecuję cudów ani błyskawicznych efektów. Obiecuję rzetelną diagnozę, jasny plan i bycie obok — z Wami i z Waszym dzieckiem.</p>
+
+        <div class="about-credentials">
+          <h4>Wykształcenie i kwalifikacje</h4>
+          <ul class="credentials-list">
+            <li>Logopedia — Uniwersytet Marii Curie-Skłodowskiej w Lublinie</li>
+            <li>Studia podyplomowe z neurologopedii</li>
+            <li>Certyfikat terapii miofunkcjonalnej</li>
+            <li>Szereg szkoleń z zakresu terapii logopedycznej</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROCESS ===================== -->
+<section class="process" id="jak-pracuje">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Jak pracuję</div>
+      <h2 class="section-title">Cztery kroki — żeby <em>wiedzieć</em>, co i po co robimy</h2>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="process-line"></div>
+        <h3>Rozmowa i obserwacja</h3>
+        <p>Spotykamy się, opowiadasz mi o swoim dziecku. Obserwuję je, diagnozuję także podczas zabawy.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-line"></div>
+        <h3>Diagnoza</h3>
+        <p>Badanie dopasowane do wieku i możliwości dziecka. Otrzymujesz informację w zrozumiałym języku, z konkretami.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="process-line"></div>
+        <h3>Indywidualny plan</h3>
+        <p>Razem ustalamy cele, częstotliwość spotkań i drogę dojścia. Plan wynika z tego, co zobaczyłam u Twojego dziecka.</p>
+      </div>
+      <div class="process-step reveal">
+        <h3>Terapia i współpraca</h3>
+        <p>Pracujemy przez zabawę, ruch i rozmowę. Po każdym spotkaniu dostajecie wskazówki do domu. Postępy omawiamy regularnie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOR WHOM ===================== -->
+<section class="forwhom" id="dla-kogo">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Dla kogo</div>
+      <h2 class="section-title">Pracuję z <em>rodzinami</em> i z <em>placówkami</em></h2>
+      <p class="section-intro">Te same kompetencje — inny kontekst. Tu i tu liczy się to samo: rzetelna diagnoza, dobra relacja z dzieckiem, jasna komunikacja z dorosłymi.</p>
+    </div>
+
+    <div class="forwhom-grid">
+      <div class="forwhom-card parents reveal">
+        <div class="forwhom-label">Dla rodziców</div>
+        <h3>Indywidualnie, blisko i konkretnie</h3>
+        <ul>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Jeden stały terapeuta — bez rotacji
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Plan dopasowany do Twojego dziecka
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Konkretne wskazówki do pracy w domu
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Jasna komunikacja — bez żargonu
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Informacja po każdej diagnozie
+          </li>
+        </ul>
+      </div>
+
+      <div class="forwhom-card institutions reveal">
+        <div class="forwhom-label">Dla placówek i instytucji</div>
+        <h3>Doświadczona współpracowniczka</h3>
+        <ul>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            17 lat pracy z dziećmi w przedszkolach
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Praca indywidualna i grupowa
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Diagnoza, dokumentacja, opinie
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Współpraca z nauczycielami i specjalistami
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            Dyspozycyjność, punktualność, kultura pracy
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="kontakt">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-eyebrow">Kontakt</div>
+      <h2 class="section-title">Napisz albo zadzwoń — <em>pierwsza rozmowa</em> niczego nie kosztuje</h2>
+      <p class="section-intro">Najszybciej odpowiem na wiadomość przez formularz lub mailowo. Jeśli zostawisz numer telefonu w wiadomości, mogę oddzwonić.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Bezpośrednio do mnie</h3>
+        <ul class="contact-list">
+          <li>
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="label">Telefon</div>
+              <a href="tel:+48504817230" class="value">504 817 230</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="label">E-mail</div>
+              <a href="mailto:annasiudaj@gmail.com" class="value">annasiudaj@gmail.com</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="label">Lokalizacja</div>
+              <div class="value">Lublin</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal"
+            action="https://formsubmit.co/annasiudaj@gmail.com"
+            method="POST">
+        <!-- FormSubmit configuration -->
+        <input type="hidden" name="_subject" value="Nowa wiadomość ze strony — Anna Sarafin">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="dziekuje.html">
+        <!-- Honeypot anti-spam -->
+        <input type="text" name="_honey" style="display:none">
+
+        <div class="form-group">
+          <label for="name">Imię i nazwisko</label>
+          <input type="text" id="name" name="imie" required placeholder="Jak się do Ciebie zwracać?">
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required placeholder="adres, na który mogę odpowiedzieć">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Telefon (opcjonalnie)</label>
+          <input type="tel" id="phone" name="telefon" placeholder="jeśli wolisz, żebym oddzwoniła">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Wiadomość</label>
+          <textarea id="message" name="wiadomosc" required placeholder="W kilku zdaniach: ile dziecko ma lat, co Was niepokoi, czego szukacie."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">
+          Wyślij wiadomość
+          <span class="btn-arrow">→</span>
+        </button>
+
+        <p class="form-privacy">
+          Wysyłając formularz, wyrażasz zgodę na kontakt zwrotny w sprawie zapytania. Dane wykorzystam wyłącznie do udzielenia odpowiedzi.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© 2026 Anna Sarafin · neurologopeda · Lublin</div>
+      <div>
+        <a href="tel:+48504817230">504 817 230</a> &nbsp;·&nbsp;
+        <a href="mailto:annasiudaj@gmail.com">annasiudaj@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(r => io.observe(r));
+</script>
+
+</body>
+</html>
